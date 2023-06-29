@@ -6,8 +6,11 @@ import 'package:prizorsdk_flutter/entities/user/phone.dart';
 import 'package:prizorsdk_flutter/helpers/enum_helper.dart';
 
 class User {
-  final String? cellphone;
-  final String? documentNumber;
+  /// [cellphone] is required because it is used to send the Authentication Code
+  final String cellphone;
+
+  /// [documentNumber] is required because it is used to Authentication and to match the user in the app
+  final String documentNumber;
   final String? name;
   final String? otherDocument;
   final Gender? gender;

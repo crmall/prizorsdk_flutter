@@ -6,8 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:prizorsdk_flutter/entities/prizorsdk_params.dart';
-import 'package:prizorsdk_flutter/helpers/crmall_encrypter.dart';
+
+import '../entities/prizorsdk_params.dart';
+import '../helpers/crmall_encrypter.dart';
+import 'prizor_loading_widget.dart';
 
 class PrizorSdkWidget extends StatefulWidget {
   const PrizorSdkWidget({
@@ -25,6 +27,7 @@ class PrizorSdkWidget extends StatefulWidget {
 
 class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
   final GlobalKey _webViewKey = GlobalKey();
+  double _progress = 0.0;
 
   String _paramsToUri() {
     return "token=${Uri.encodeComponent(CrmallEncrypter.encrypt(jsonEncode(widget.params))!)}";
@@ -50,9 +53,12 @@ class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
     }
   }
 
+  Color get backgroundColor => const Color(0xFFE5E5E5);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: _progress < 1.0 ? Colors.white : backgroundColor,
       extendBodyBehindAppBar: false,
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -64,46 +70,60 @@ class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
           statusBarBrightness: Brightness.light,
         ),
       ),
-      body: InAppWebView(
-        key: _webViewKey,
-        initialUrlRequest: URLRequest(url: WebUri("https://static-sdk.prizor.com/#/splash?${_paramsToUri()}")),
-        initialSettings: InAppWebViewSettings(
-          mediaPlaybackRequiresUserGesture: false,
-          allowsInlineMediaPlayback: true,
-        ),
-        onLoadStart: (controller, url) {
-          if (url?.authority == "prizorsdk.close") {
-            controller.stopLoading();
-            Navigator.pop(context);
-          }
-        },
-        onPermissionRequest: (controller, request) async {
-          final resources = <PermissionResourceType>[];
-          if (request.resources.contains(PermissionResourceType.CAMERA)) {
-            final cameraStatus = await Permission.camera.request();
-            if (!cameraStatus.isDenied) {
-              resources.add(PermissionResourceType.CAMERA);
-            }
-          }
-          if (request.resources.contains(PermissionResourceType.MICROPHONE)) {
-            final microphoneStatus = await Permission.microphone.request();
-            if (!microphoneStatus.isDenied) {
-              resources.add(PermissionResourceType.MICROPHONE);
-            }
-          }
-          if (request.resources.contains(PermissionResourceType.CAMERA_AND_MICROPHONE)) {
-            final cameraStatus = await Permission.camera.request();
-            final microphoneStatus = await Permission.microphone.request();
-            if (!cameraStatus.isDenied && !microphoneStatus.isDenied) {
-              resources.add(PermissionResourceType.CAMERA_AND_MICROPHONE);
-            }
-          }
+      body: Stack(
+        children: [
+          InAppWebView(
+            key: _webViewKey,
+            initialUrlRequest: URLRequest(url: WebUri("https://static-sdk.prizor.com/#/splash?${_paramsToUri()}")),
+            initialSettings: InAppWebViewSettings(
+              mediaPlaybackRequiresUserGesture: false,
+              allowsInlineMediaPlayback: true,
+            ),
+            onLoadStart: (controller, url) {
+              if (url?.authority == "prizorsdk.close") {
+                controller.stopLoading();
+                Navigator.pop(context);
+              }
+            },
+            onProgressChanged: (controller, progress) {
+              setState(() {
+                _progress = progress / 100;
+              });
+            },
+            onPermissionRequest: (controller, request) async {
+              final resources = <PermissionResourceType>[];
+              if (request.resources.contains(PermissionResourceType.CAMERA)) {
+                final cameraStatus = await Permission.camera.request();
+                if (!cameraStatus.isDenied) {
+                  resources.add(PermissionResourceType.CAMERA);
+                }
+              }
+              if (request.resources.contains(PermissionResourceType.MICROPHONE)) {
+                final microphoneStatus = await Permission.microphone.request();
+                if (!microphoneStatus.isDenied) {
+                  resources.add(PermissionResourceType.MICROPHONE);
+                }
+              }
+              if (request.resources.contains(PermissionResourceType.CAMERA_AND_MICROPHONE)) {
+                final cameraStatus = await Permission.camera.request();
+                final microphoneStatus = await Permission.microphone.request();
+                if (!cameraStatus.isDenied && !microphoneStatus.isDenied) {
+                  resources.add(PermissionResourceType.CAMERA_AND_MICROPHONE);
+                }
+              }
 
-          return PermissionResponse(
-            resources: resources,
-            action: resources.isEmpty ? PermissionResponseAction.DENY : PermissionResponseAction.GRANT,
-          );
-        },
+              return PermissionResponse(
+                resources: resources,
+                action: resources.isEmpty ? PermissionResponseAction.DENY : PermissionResponseAction.GRANT,
+              );
+            },
+          ),
+          _progress < 1.0
+              ? PrizorLoadingWidget(
+                  accentColor: widget.params.accentColor,
+                )
+              : const SizedBox.shrink(),
+        ],
       ),
     );
   }

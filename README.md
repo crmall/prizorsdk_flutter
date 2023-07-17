@@ -185,9 +185,9 @@ Example of Prizor Sdk with BottomNavigationBar
 <br>
 <br>
 
-`isRootRoute` is `false` or `null
 Example of Prizor Sdk with Navigation
-<br>s
+`isRootRoute` is `false` or `null
+<br>
 <img src="./assets/isRootPage-false.png" width="300" height="600">
  
 ## Additional Information

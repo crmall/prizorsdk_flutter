@@ -1,6 +1,6 @@
 class Sac {
-  final String? title;
-  final String? content;
+  final String title;
+  final String content;
   final String? email;
   final String? phone1;
   final String? phone1Caption;

@@ -6,3 +6,9 @@
 
 - Updated Documentation
 - Added `Loading` Widget
+
+
+## 0.0.3
+
+- Added params `isRootPage`
+- Added params `titleRoute`

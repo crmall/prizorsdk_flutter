@@ -117,9 +117,9 @@ The `PrizorSdkParams` class is responsible for storing the parameters required t
 
 - `appName`: The name of the app to be displayed.
 
-- `isRootRoute`: (optional): If it is true, the Prizor SDK will be the root route of the application. If it is false, the Prizor SDK will be a normal route of the application. The default value is false.
+- `isRootRoute`: (optional): If it is true, the Prizor SDK will be the root route of the application. If it is false, the Prizor SDK will be a normal route of the application. The default value is false. (See the example below)
 
-- `titleRoute`: (optional): When `isRootRoute` is [`true`], this parameter will be used as the title of `AppBar`  the route. The default value is `empty`.
+- `titleRoute`: (optional): When `isRootRoute` is [`true`], this parameter will be used as the title of `AppBar`  the route. The default value is `empty`. (See the example below)
 
 - `accentColor`: The primary color of the app, used in the app bar, buttons, icons, etc.
 
@@ -139,6 +139,7 @@ USE A PNG IMAGE!
 - `sac`: SAC (Service of Customer Support) data to be used in the app campaigns.
 
 These parameters can be configured according to the application's needs to customize the appearance and behavior of the Prizor SDK.
+
 
 
 ### User
@@ -170,8 +171,20 @@ The `User` class represents user data to be used in app campaigns. Below is a de
 - `emails`: A list of email addresses associated with the user.
 
 - `addresses`: A list of addresses associated with the user.
-
 These parameters provide various user details that can be used in app campaigns for personalization and targeted messaging.
+
+
+### Example for root route
+
+`isRootRoute` is `true` and `titleRoute` is `Benefícios`, Prizor Sdk with BottomNavigationBar
+
+<!-- image -->
+<img src="./assets/isRootPage-true.png" width="300" height="600">
+
+
+`isRootRoute` is `false` or `null`.`
+<img src="./assets/isRootPage-false.png" width="300" height="600">
+ 
 ## Additional Information
 
 For more information and assistance with integrating the Prizor SDK into your project, please reach out to the CRMall team. They will provide you with the necessary resources and support to ensure a smooth integration process.

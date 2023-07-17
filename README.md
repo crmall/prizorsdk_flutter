@@ -178,13 +178,16 @@ These parameters provide various user details that can be used in app campaigns 
 
 Example of Prizor Sdk with BottomNavigationBar
 `isRootRoute` is `true` and `titleRoute` is `Benefícios`, Prizor Sdk with BottomNavigationBar
+<br>
 <img src="./assets/isRootPage-true.png" width="300" height="600">
 
+<br>
 <br>
 <br>
 
 `isRootRoute` is `false` or `null
 Example of Prizor Sdk with Navigation
+<br>s
 <img src="./assets/isRootPage-false.png" width="300" height="600">
  
 ## Additional Information

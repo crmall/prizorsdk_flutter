@@ -1,6 +1,6 @@
 name: prizorsdk_flutter
 description: Prizor SDK Flutter, plugin for seamless integration with PrizorSDK, empowering your mobile apps. Docs for integrating and utilizing PrizorSDK in Flutter projects.
-version: 0.0.3
+version: 0.0.4
 homepage: https://prizor.com
 repository: https://github.com/crmall/prizorsdk_flutter
 

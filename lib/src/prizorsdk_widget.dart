@@ -12,14 +12,19 @@ import '../helpers/crmall_encrypter.dart';
 import 'prizor_loading_widget.dart';
 
 class PrizorSdkWidget extends StatefulWidget {
+  /// [PrizorSdkWidget] is the main widget of the Prizor SDK.
+  /// It is responsible for the communication between the SDK and the app.
+  /// It receives a [PrizorSdkParams] object as a parameter.
+  /// It also receives an optional [androidAPIErrorCallback] function that will be called if the Android API version is lower than 29.
+  final PrizorSdkParams params;
+
+  final Function? androidAPIErrorCallback;
+
   const PrizorSdkWidget({
     required this.params,
     this.androidAPIErrorCallback,
     super.key,
   });
-
-  final PrizorSdkParams params;
-  final Function? androidAPIErrorCallback;
 
   @override
   PrizorSdkWidgetState createState() => PrizorSdkWidgetState();
@@ -30,7 +35,8 @@ class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
   double _progress = 0.0;
 
   String _paramsToUri() {
-    return "token=${Uri.encodeComponent(CrmallEncrypter.encrypt(jsonEncode(widget.params))!)}";
+    var token = "token=${Uri.encodeComponent(CrmallEncrypter.encrypt(jsonEncode(widget.params))!)}";
+    return token;
   }
 
   Future<void> checkVersion() async {

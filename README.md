@@ -117,15 +117,20 @@ The `PrizorSdkParams` class is responsible for storing the parameters required t
 
 - `appName`: The name of the app to be displayed.
 
+- `isRootRoute`: (optional): If it is true, the Prizor SDK will be the root route of the application. If it is false, the Prizor SDK will be a normal route of the application. The default value is false.
+
+- `titleRoute`: (optional): When `isRootRoute` is [`true`], this parameter will be used as the title of `AppBar`  the route. The default value is `empty`.
+
 - `accentColor`: The primary color of the app, used in the app bar, buttons, icons, etc.
 
 - `accentForegroundColor`: The foreground color of the app.
 
 - `user`: User data to be used in the app campaigns.
 
-- `appLogo`: The image in the campaigns. If it is null, the logo will not be shown.
+- `appLogo`: The image in the campaigns. If it is null, the logo will not be shown. USE A PNG IMAGE!
 
 - `appBrand`: The image on the home screen. If it is null, the brand will not be shown.
+USE A PNG IMAGE!
 
 - `splashForegroundColor`: The splash screen foreground color. If it is null, the `accentColor` will be used.
 

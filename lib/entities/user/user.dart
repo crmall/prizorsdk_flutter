@@ -15,6 +15,8 @@ class User {
   final String? otherDocument;
   final Gender? gender;
   final MaritalStatus? maritalStatus;
+
+  /// Birthday: [day], [month] and [year] are required because it is used to Authentication and to match the user in the app
   final int? day;
   final int? month;
   final int? year;

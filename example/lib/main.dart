@@ -19,7 +19,57 @@ class MyApp extends StatelessWidget {
       title: title,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MyHomePage(title: title),
+      home: const NavigationPage(),
+    );
+  }
+}
+
+class NavigationPage extends StatelessWidget {
+  const NavigationPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("PrizorSDK Example"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(
+              child: const Text("Root Page Example"),
+              onPressed: () async {
+                if (context.mounted) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => const MyRootHomePage(
+                        title: "PrizorSDK Example",
+                      ),
+                    ),
+                  );
+                }
+              },
+            ),
+            ElevatedButton(
+              child: const Text("Navigation Page Example"),
+              onPressed: () async {
+                if (context.mounted) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (BuildContext context) => const MyHomePage(
+                        title: "PrizorSDK Example",
+                      ),
+                    ),
+                  );
+                }
+              },
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -90,10 +140,70 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+class MyRootHomePage extends StatefulWidget {
+  const MyRootHomePage({required this.title, super.key});
+
+  final String title;
+
+  @override
+  State<MyRootHomePage> createState() => _MyRootHomePageState();
+}
+
+class _MyRootHomePageState extends State<MyRootHomePage> {
+  final String DOCUMENT_FAKER = "40583583946";
+
+  late final List<Widget> _children = [
+    const MyHomePage(title: "HOME"),
+    PrizorSdkPage(
+      cpf: DOCUMENT_FAKER,
+      isRootRoute: true,
+      titleRoute: 'Benefícios',
+    ),
+  ];
+
+  int _currentIndex = 0;
+
+  void _setIndex(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _children[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (int index) {
+          _setIndex(index);
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.app_shortcut_outlined),
+            label: "PrizorSDK",
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class PrizorSdkPage extends StatefulWidget {
-  const PrizorSdkPage({required this.cpf, super.key});
+  const PrizorSdkPage({
+    super.key,
+    required this.cpf,
+    this.isRootRoute = false,
+    this.titleRoute = "",
+  });
 
   final String cpf;
+  final String titleRoute;
+  final bool isRootRoute;
 
   @override
   State<PrizorSdkPage> createState() => _PrizorSdkPageState();
@@ -108,60 +218,17 @@ class _PrizorSdkPageState extends State<PrizorSdkPage> {
       ),
       params: PrizorSdkParams(
         environment: Environment.production,
-        appId: "***",
-        secret: "***",
-        appName: "Test SDK",
-        appLogo: null,
-        appBrand: null,
-        accentColor: const Color(0xFFF1BF3B),
-        accentForegroundColor: const Color(0xFFFFFFFF),
-        splashBackgroundColor: null,
-        splashForegroundColor: null,
-        user: User(
-          documentNumber: widget.cpf,
+        appId: "10204498610000",
+        secret: "dc7d5f5a6764d5a0860790911cb8992570ff0418",
+        appName: "PrizorSDK Example",
+        isRootRoute: widget.isRootRoute,
+        titleRoute: widget.titleRoute,
+        accentColor: const Color(0xFF000000),
+        accentForegroundColor: Colors.white,
+        user: const User(
+          documentNumber: "40583583946",
           cellphone: "+5512345678901",
-          name: "João da Silva",
-          otherDocument: "123456789",
-          gender: Gender.male,
-          maritalStatus: MaritalStatus.single,
-          day: 1,
-          month: 1,
-          year: 1990,
-          occupation: "Programador",
-          phones: [
-            const Phone(
-              phoneNumber: "+5544991720532",
-              isOptIn: true,
-            ),
-          ],
-          emails: [
-            const Email(
-              email: "krayony@gmail.com",
-              isOptIn: true,
-            ),
-          ],
-          addresses: [
-            const Address(
-              zipCode: 84035902,
-              country: "Brasil",
-              state: "PR",
-              stateName: "Paraná",
-              city: "Maringá",
-              neighborhood: "Centro",
-              address: "Avenida Tamandaré",
-              number: "100",
-              isOptIn: true,
-            ),
-          ],
-        ),
-        sac: const Sac(
-          title: "Precisa de ajuda?",
-          content: "Segunda a sábado: 10h às 22h\nDomingos e Feriados: 14h às 20h",
-          email: "sac@prizor.com",
-          phone1: "+554432186300",
-          phone1Caption: "(44) 3218-6300",
-          phone2: "https://api.whatsapp.com/send?phone=5544987654321",
-          phone2Caption: "(44) 98765-4321",
+          name: "John Doe",
         ),
       ),
     );

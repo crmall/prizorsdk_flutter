@@ -1,5 +1,8 @@
 class Email {
+  /// Email address of the user.
   final String? email;
+
+  /// OptIn
   final bool? isOptIn;
 
   const Email({

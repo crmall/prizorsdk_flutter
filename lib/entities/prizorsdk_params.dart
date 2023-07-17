@@ -27,10 +27,10 @@ class PrizorSdkParams {
   /// User data to be used in the app campaigns.
   final User user;
 
-  /// Image in the campaigns. If it is null, the logo will not be shown.
+  /// Image in the campaigns. If it is null, the logo will not be shown. USE PNG FORMAT.
   final Uri? appLogo;
 
-  /// Image in the home screen. If it is null, the brand will not be shown.
+  /// Image in the home screen. If it is null, the brand will not be shown. USE PNG FORMAT.
   final Uri? appBrand;
 
   /// Splash screen foreground color. If it is null, [accentColor] will be used.
@@ -41,6 +41,12 @@ class PrizorSdkParams {
 
   /// SAC data to be used in the app campaigns.
   final Sac? sac;
+
+  /// If it is true, the app will be opened in the root route Use with BottomNavigationBar, TabBar, etc.
+  final bool isRootRoute;
+
+  /// If it is true, the app will be opened in the title route Use with AppBar, etc.
+  final String titleRoute;
 
   const PrizorSdkParams({
     required this.environment,
@@ -55,6 +61,8 @@ class PrizorSdkParams {
     this.splashForegroundColor,
     this.splashBackgroundColor,
     this.sac,
+    this.isRootRoute = false,
+    this.titleRoute = '',
   });
 
   Map<String, dynamic> toJson() {
@@ -71,6 +79,8 @@ class PrizorSdkParams {
       'splashForegroundColor': splashForegroundColor?.value.toRadixString(16),
       'splashBackgroundColor': splashBackgroundColor?.value.toRadixString(16),
       'sac': sac?.toJson(),
+      'isRootRoute': isRootRoute,
+      'titleRoute': titleRoute,
     };
   }
 
@@ -88,6 +98,7 @@ class PrizorSdkParams {
       splashForegroundColor: Color(json['splashForegroundColor']),
       splashBackgroundColor: Color(json['splashBackgroundColor']),
       sac: Sac.fromJson(json['sac']),
+      isRootRoute: json['isRootRoute'],
     );
   }
 }

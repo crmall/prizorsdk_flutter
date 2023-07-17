@@ -1,6 +1,6 @@
 name: prizorsdk_flutter
-description: Prizor SDK Flutter is a powerful Flutter plugin that seamlessly integrates with PrizorSDK, providing advanced features for your mobile applications. This documentation will guide you through the process of integrating and utilizing the PrizorSDK in your Flutter projects.
-version: 0.0.2
+description: Prizor SDK Flutter, plugin for seamless integration with PrizorSDK, empowering your mobile apps. Docs for integrating and utilizing PrizorSDK in Flutter projects.
+version: 0.0.3
 homepage: https://prizor.com
 repository: https://github.com/crmall/prizorsdk_flutter
 
@@ -11,14 +11,25 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  diacritic: ^0.1.3
-  encrypt: ^5.0.1
-  permission_handler: ^10.3.0
+  # Utility Dependencies
   collection: ^1.17.1
-  flutter_inappwebview: ^6.0.0-beta.24+1
+  diacritic: ^0.1.3
+
+  # Security Dependencies
+  encrypt: ^5.0.1
+
+  # Device Dependencies
   device_info_plus: ^9.0.2
 
+  # Webview Dependencies
+  flutter_inappwebview: ^6.0.0-beta.24+1
+
+  # UI Dependencies
   flutter_spinkit: ^5.2.0
+
+  # Permission Dependencies
+  permission_handler: ^10.3.0
+
 
 dev_dependencies:
   flutter_test:

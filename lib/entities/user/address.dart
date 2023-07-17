@@ -1,15 +1,38 @@
 class Address {
+  /// CEP
   final int? zipCode;
+
+  /// País
   final String? country;
+
+  /// Estado
   final String? state;
+
+  /// Nome do estado
   final String? stateName;
+
+  /// Cidade
   final String? city;
+
+  /// Bairro
   final String? neighborhood;
+
+  /// Endereço
   final String? address;
+
+  /// Número
   final String? number;
+
+  /// Complemento
   final String? complement;
+
+  /// OptIn
   final bool? isOptIn;
+
+  /// Latitude
   final double? latitude;
+
+  /// Longitude
   final double? longitude;
 
   const Address({

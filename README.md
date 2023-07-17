@@ -180,7 +180,7 @@ Example of Prizor Sdk with BottomNavigationBar
 `isRootRoute` is `true` and `titleRoute` is `Benefícios`, Prizor Sdk with BottomNavigationBar
 Remove BackButton and add a title in AppBar
 <br>
-<img src="https://github.com/crmall/prizorsdk_flutter/blob/develop/assets/isRootPage-true.png" width="300" height="600">
+<img src="https://github.com/crmall/prizorsdk_flutter/blob/develop/assets/isRootPage-true.png?raw=true" width="300" height="600">
 
 <br>
 <br>
@@ -188,10 +188,10 @@ Remove BackButton and add a title in AppBar
 
 
 Example of Prizor Sdk with Navigation
-`isRootRoute` is `false` or `null
+`isRootRoute` is `false` or `null`
 
 <br>
-<img src="https://github.com/crmall/prizorsdk_flutter/blob/develop/assets/isRootPage-false.png" width="300" height="600">
+<img src="https://github.com/crmall/prizorsdk_flutter/blob/develop/assets/isRootPage-false.png?raw=true" width="300" height="600">
  
 ## Additional Information
 

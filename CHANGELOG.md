@@ -12,3 +12,6 @@
 
 - Added params `isRootPage`
 - Added params `titleRoute`
+
+## 0.0.5
+- Updated Documentation

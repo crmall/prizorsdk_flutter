@@ -15,3 +15,6 @@
 
 ## 0.0.5
 - Updated Documentation
+
+## 0.0.6
+- Changed Cep(zipcode) to String

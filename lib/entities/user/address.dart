@@ -1,6 +1,6 @@
 class Address {
   /// CEP
-  final int? zipCode;
+  final String? zipCode;
 
   /// País
   final String? country;

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
@@ -32,7 +33,7 @@ class PrizorSdkWidget extends StatefulWidget {
 
 class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
   final GlobalKey _webViewKey = GlobalKey();
-  double _progress = 0.0;
+  int _progress = 0;
 
   String _paramsToUri() {
     var token = "token=${Uri.encodeComponent(CrmallEncrypter.encrypt(jsonEncode(widget.params))!)}";
@@ -93,8 +94,13 @@ class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
             },
             onProgressChanged: (controller, progress) {
               setState(() {
-                _progress = progress / 100;
+                _progress = progress;
               });
+            },
+            onCameraCaptureStateChanged: (controller, oldState, newState) async {
+              if (kDebugMode) {
+                print("onCameraCaptureStateChanged: $oldState -> $newState");
+              }
             },
             onPermissionRequest: (controller, request) async {
               final resources = <PermissionResourceType>[];
@@ -117,14 +123,13 @@ class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
                   resources.add(PermissionResourceType.CAMERA_AND_MICROPHONE);
                 }
               }
-
               return PermissionResponse(
                 resources: resources,
                 action: resources.isEmpty ? PermissionResponseAction.DENY : PermissionResponseAction.GRANT,
               );
             },
           ),
-          _progress < 1.0
+          _progress < 100
               ? PrizorLoadingWidget(
                   accentColor: widget.params.accentColor,
                 )

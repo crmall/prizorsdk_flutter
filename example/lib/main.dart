@@ -40,7 +40,6 @@ class NavigationPage extends StatelessWidget {
             ElevatedButton(
               child: const Text("Root Page Example"),
               onPressed: () async {
-                if (context.mounted) {
                   Navigator.push(
                     context,
                     MaterialPageRoute<void>(
@@ -49,13 +48,11 @@ class NavigationPage extends StatelessWidget {
                       ),
                     ),
                   );
-                }
               },
             ),
             ElevatedButton(
               child: const Text("Navigation Page Example"),
               onPressed: () async {
-                if (context.mounted) {
                   Navigator.push(
                     context,
                     MaterialPageRoute<void>(
@@ -64,7 +61,6 @@ class NavigationPage extends StatelessWidget {
                       ),
                     ),
                   );
-                }
               },
             ),
           ],
@@ -116,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   await Permission.camera.request();
                   await Permission.microphone.request();
 
-                  if (context.mounted) {
+                  if (mounted) {
                     Navigator.push(
                       context,
                       MaterialPageRoute<void>(
@@ -218,17 +214,28 @@ class _PrizorSdkPageState extends State<PrizorSdkPage> {
       ),
       params: PrizorSdkParams(
         environment: Environment.production,
-        appId: "***",
-        secret: "***",
+        appId: "7849554450001",
+        secret: "971fca8390535c0682ad3904c2d19d66045cda8d",
         appName: "PrizorSDK Example",
         isRootRoute: widget.isRootRoute,
         titleRoute: widget.titleRoute,
         accentColor: const Color(0xFF000000),
         accentForegroundColor: Colors.white,
         user: const User(
-          documentNumber: "40583583946",
+          documentNumber: "61781551073",
           cellphone: "+5512345678901",
-          name: "John Doe",
+          name: "Helena",
+          day: 07,
+          month: 06,
+          year: 1994,
+          addresses: [
+            Address(
+              zipCode: '87083-866',
+              address: 'Rua pioneiro joão marques de abreu',
+              city: 'Maringá',
+              number: '36',
+            ),
+          ],
         ),
       ),
     );

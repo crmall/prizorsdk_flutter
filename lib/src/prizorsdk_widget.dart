@@ -44,7 +44,7 @@ class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
     DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
 
-    if (androidInfo.version.sdkInt < 29 && context.mounted) {
+    if (androidInfo.version.sdkInt < 29 && mounted) {
       Navigator.pop(context);
       if (widget.androidAPIErrorCallback != null) {
         widget.androidAPIErrorCallback!();
@@ -81,7 +81,8 @@ class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
         children: [
           InAppWebView(
             key: _webViewKey,
-            initialUrlRequest: URLRequest(url: WebUri("https://static-sdk.prizor.com/#/splash?${_paramsToUri()}")),
+            // initialUrlRequest: URLRequest(url: WebUri("https://static-sdk.prizor.com/#/splash?${_paramsToUri()}")),
+            initialUrlRequest: URLRequest(url: WebUri("https://static-sdk-qa.prizor.com/#/splash?${_paramsToUri()}")),
             initialSettings: InAppWebViewSettings(
               mediaPlaybackRequiresUserGesture: false,
               allowsInlineMediaPlayback: true,

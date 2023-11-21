@@ -103,8 +103,96 @@ PrizorSdkWidget(
 );
 ```
 
-The `androidAPIErrorCallback` is available to show a message when a user tries to enter the Prizor SDK with an Android device running on an API level lower than 29.
+The `androidAPIErrorCallback` is available to show a message when a user tries to enter the Prizor SDK with an  `Android` device running on an API level lower than `29`.
 
+### PrizorSdkParams
+
+The `PrizorSdkParams` class is responsible for storing the parameters required to configure the Prizor SDK in an application. Below is a description of each of the parameters:
+
+- `environment`: The environment of the application. Possible values are `production`, `stage`, `development`, and `master`. Use `Environment.production` for the production environment.
+
+- `appId`: The app ID provided by CRMall team.
+
+- `secret`: The app secret provided by CRMall team.
+
+- `appName`: The name of the app to be displayed.
+
+- `isRootRoute`: (optional): If it is true, the Prizor SDK will be the root route of the application. If it is false, the Prizor SDK will be a normal route of the application. The default value is false. (See the example below)
+
+- `titleRoute`: (optional): When `isRootRoute` is [`true`], this parameter will be used as the title of `AppBar`  the route. The default value is `empty`. (See the example below)
+
+- `accentColor`: The primary color of the app, used in the app bar, buttons, icons, etc.
+
+- `accentForegroundColor`: The foreground color of the app.
+
+- `user`: User data to be used in the app campaigns.
+
+- `appLogo`: The image in the campaigns. If it is null, the logo will not be shown. USE A PNG IMAGE!
+
+- `appBrand`: The image on the home screen. If it is null, the brand will not be shown.
+USE A PNG IMAGE!
+
+- `splashForegroundColor`: The splash screen foreground color. If it is null, the `accentColor` will be used.
+
+- `splashBackgroundColor`: The splash screen background color. If it is null, the `accentForegroundColor` will be used.
+
+- `sac`: SAC (Service of Customer Support) data to be used in the app campaigns.
+
+These parameters can be configured according to the application's needs to customize the appearance and behavior of the Prizor SDK.
+
+
+
+### User
+
+The `User` class represents user data to be used in app campaigns. Below is a description of each of the parameters:
+
+- `cellphone`: The user's cellphone number. It is required because it is used to send the authentication code.
+
+- `documentNumber`: The user's document number. It is required because it is used for authentication and to match the user in the app.
+
+- `name`: The user's name.
+
+- `otherDocument`: Another document associated with the user.
+
+- `gender`: The user's gender.
+
+- `maritalStatus`: The user's marital status.
+
+- `day`: The user's birth day.
+
+- `month`: The user's birth month.
+
+- `year`: The user's birth year.
+
+- `occupation`: The user's occupation.
+
+- `phones`: A list of phone numbers associated with the user.
+
+- `emails`: A list of email addresses associated with the user.
+
+- `addresses`: A list of addresses associated with the user.
+These parameters provide various user details that can be used in app campaigns for personalization and targeted messaging.
+
+
+### Example for root route
+
+Example of Prizor Sdk with BottomNavigationBar
+`isRootRoute` is `true` and `titleRoute` is `Benefícios`, Prizor Sdk with BottomNavigationBar
+Remove BackButton and add a title in AppBar
+<br>
+<img src="https://github.com/crmall/prizorsdk_flutter/blob/develop/assets/isRootPage-true.png?raw=true" width="300" height="600">
+
+<br>
+<br>
+<br>
+
+
+Example of Prizor Sdk with Navigation
+`isRootRoute` is `false` or `null`
+
+<br>
+<img src="https://github.com/crmall/prizorsdk_flutter/blob/develop/assets/isRootPage-false.png?raw=true" width="300" height="600">
+ 
 ## Additional Information
 
 For more information and assistance with integrating the Prizor SDK into your project, please reach out to the CRMall team. They will provide you with the necessary resources and support to ensure a smooth integration process.

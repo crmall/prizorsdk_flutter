@@ -214,8 +214,8 @@ class _PrizorSdkPageState extends State<PrizorSdkPage> {
       ),
       params: PrizorSdkParams(
         environment: Environment.production,
-        appId: "7849554450001",
-        secret: "971fca8390535c0682ad3904c2d19d66045cda8d",
+        appId: "***",
+        secret: "***",
         appName: "PrizorSDK Example",
         isRootRoute: widget.isRootRoute,
         titleRoute: widget.titleRoute,

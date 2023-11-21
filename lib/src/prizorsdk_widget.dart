@@ -81,8 +81,8 @@ class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
         children: [
           InAppWebView(
             key: _webViewKey,
-            // initialUrlRequest: URLRequest(url: WebUri("https://static-sdk.prizor.com/#/splash?${_paramsToUri()}")),
-            initialUrlRequest: URLRequest(url: WebUri("https://static-sdk-qa.prizor.com/#/splash?${_paramsToUri()}")),
+            initialUrlRequest: URLRequest(url: WebUri("https://static-sdk.prizor.com/#/splash?${_paramsToUri()}")),
+            // initialUrlRequest: URLRequest(url: WebUri("https://static-sdk-qa.prizor.com/#/splash?${_paramsToUri()}")),
             initialSettings: InAppWebViewSettings(
               mediaPlaybackRequiresUserGesture: false,
               allowsInlineMediaPlayback: true,

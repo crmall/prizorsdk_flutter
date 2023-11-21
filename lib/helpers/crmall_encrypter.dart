@@ -13,10 +13,13 @@ class CrmallEncrypter {
     try {
       final key = Key.fromUtf8(secret);
       final iv = IV.fromLength(16);
-      final encrypter = Encrypter(AES(key, mode: AESMode.cbc, padding: 'PKCS7'));
+      final encrypter =
+          Encrypter(AES(key, mode: AESMode.cbc, padding: 'PKCS7'));
       final encrypted = encrypter.encrypt(message, iv: iv);
       return encrypted.base64;
-    } catch (_) {
+    } catch (e, stacktrace) {
+      print(
+          'Crmall encrypter fail | error: ${e.toString()} | stacktrace: ${stacktrace.toString()}');
       return null;
     }
   }

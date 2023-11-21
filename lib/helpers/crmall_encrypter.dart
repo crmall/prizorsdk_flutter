@@ -12,7 +12,7 @@ class CrmallEncrypter {
     /// It is defined in the [lib/prizorsdk_flutter.dart] file.
     try {
       final key = Key.fromUtf8(secret);
-      final iv = IV.fromLength(16);
+      final iv = IV.allZerosOfLength(16);
       final encrypter =
           Encrypter(AES(key, mode: AESMode.cbc, padding: 'PKCS7'));
       final encrypted = encrypter.encrypt(message, iv: iv);

@@ -213,9 +213,9 @@ class _PrizorSdkPageState extends State<PrizorSdkPage> {
         const SnackBar(content: Text("Android Version Error.")),
       ),
       params: PrizorSdkParams(
-        environment: Environment.production,
-        appId: "***",
-        secret: "***",
+        environment: Environment.stage,
+        appId: "5199747560001",
+        secret: "ebb06aa36345cc7fdcea9fdeda58c2cdc6f3b2ed",
         appName: "PrizorSDK Example",
         isRootRoute: widget.isRootRoute,
         titleRoute: widget.titleRoute,

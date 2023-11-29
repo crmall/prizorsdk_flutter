@@ -36,6 +36,7 @@ class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
   int _progress = 0;
 
   String _paramsToUri() {
+    print(jsonEncode(widget.params));
     var token = "token=${Uri.encodeComponent(CrmallEncrypter.encrypt(jsonEncode(widget.params))!)}";
     return token;
   }

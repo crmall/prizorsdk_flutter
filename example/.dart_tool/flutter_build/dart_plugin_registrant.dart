@@ -3,7 +3,7 @@
 // This file is generated from template in file `flutter_tools/lib/src/flutter_plugins.dart`.
 //
 
-// @dart = 2.18
+// @dart = 3.0
 
 import 'dart:io'; // flutter_ignore: dart_io_import.
 import 'package:device_info_plus/device_info_plus.dart';

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
@@ -36,8 +37,15 @@ class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
   int _progress = 0;
 
   String _paramsToUri() {
-    print(jsonEncode(widget.params));
-    var token = "token=${Uri.encodeComponent(CrmallEncrypter.encrypt(jsonEncode(widget.params))!)}";
+    var token = "token=${Uri.encodeComponent(
+      CrmallEncrypter.encrypt(
+        jsonEncode(
+          widget.params,
+        ),
+      )!,
+    )}";
+
+    log(token);
     return token;
   }
 
@@ -82,8 +90,21 @@ class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
         children: [
           InAppWebView(
             key: _webViewKey,
-            initialUrlRequest: URLRequest(url: WebUri("https://static-sdk.prizor.com/#/splash?${_paramsToUri()}")),
-            // initialUrlRequest: URLRequest(url: WebUri("https://static-sdk-qa.prizor.com/#/splash?${_paramsToUri()}")),
+            initialUrlRequest: URLRequest(
+              url: WebUri(
+                // URL DA ULTIMA VERSÃO DE PROD
+                //"https://static-sdk.prizor.com/latest/#/splash??${_paramsToUri()}",
+
+                // URL DE VERSÃO ESPECÍFICA DE PROD
+                //"https://static-sdk.prizor.com/4.4.0/#/splash??${_paramsToUri()}",
+
+                // URL DA ULTIMA VERSÃO DE QA
+                "https://static-sdk-qa.prizor.com/latest/#/splash?${_paramsToUri()}",
+
+                // URL DE BRANCH ESPECIFICA DE QA
+                // "https://static-sdk-qa.prizor.com/CAMP-DEV-3527/#/splash?${_paramsToUri()}",
+              ),
+            ),
             initialSettings: InAppWebViewSettings(
               mediaPlaybackRequiresUserGesture: false,
               allowsInlineMediaPlayback: true,
@@ -99,7 +120,8 @@ class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
                 _progress = progress;
               });
             },
-            onCameraCaptureStateChanged: (controller, oldState, newState) async {
+            onCameraCaptureStateChanged:
+                (controller, oldState, newState) async {
               if (kDebugMode) {
                 print("onCameraCaptureStateChanged: $oldState -> $newState");
               }
@@ -112,13 +134,15 @@ class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
                   resources.add(PermissionResourceType.CAMERA);
                 }
               }
-              if (request.resources.contains(PermissionResourceType.MICROPHONE)) {
+              if (request.resources
+                  .contains(PermissionResourceType.MICROPHONE)) {
                 final microphoneStatus = await Permission.microphone.request();
                 if (!microphoneStatus.isDenied) {
                   resources.add(PermissionResourceType.MICROPHONE);
                 }
               }
-              if (request.resources.contains(PermissionResourceType.CAMERA_AND_MICROPHONE)) {
+              if (request.resources
+                  .contains(PermissionResourceType.CAMERA_AND_MICROPHONE)) {
                 final cameraStatus = await Permission.camera.request();
                 final microphoneStatus = await Permission.microphone.request();
                 if (!cameraStatus.isDenied && !microphoneStatus.isDenied) {
@@ -127,7 +151,7 @@ class PrizorSdkWidgetState extends State<PrizorSdkWidget> {
               }
               return PermissionResponse(
                 resources: resources,
-                action: resources.isEmpty ? PermissionResponseAction.DENY : PermissionResponseAction.GRANT,
+                action: PermissionResponseAction.GRANT,
               );
             },
           ),

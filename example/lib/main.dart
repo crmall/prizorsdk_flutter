@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:prizorsdk_flutter/prizorsdk_flutter.dart';
@@ -213,21 +215,24 @@ class _PrizorSdkPageState extends State<PrizorSdkPage> {
         const SnackBar(content: Text("Android Version Error.")),
       ),
       params: PrizorSdkParams(
+        platform: 'android',
         environment: Environment.stage,
-        appId: "5787892290000",
-        secret: "68a96828a395f4f993ffbb54dfa2cd443f3f0793",
+        appId: "10554783550001",
+        secret: "4c574daf97a2d1cee3f1f0d160e8932ce043499b",
         appName: "PrizorSDK Example",
         isRootRoute: widget.isRootRoute,
         titleRoute: widget.titleRoute,
-        accentColor: const Color(0xFF000000),
+        accentColor: const Color(0xFFFFDF6B),
         accentForegroundColor: Colors.white,
         user: const User(
           name: "Paulo Koga",
           documentNumber: "23891368003",
+          otherDocument: '107688921',
           cellphone: "+5519981726819",
           day: 29,
           month: 4,
           year: 1990,
+          gender: Gender.male,
           addresses: [
             Address(
               zipCode: '05402-600',

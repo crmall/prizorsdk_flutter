@@ -1,1 +1,0 @@
- /Users/jeanlucasdecamillo/dev/sdk-web-test/example/.dart_tool/flutter_build/62d2e5bd85102bdf996c0168e24dcc6b/native_assets.yaml: 

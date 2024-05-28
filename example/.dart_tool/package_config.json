@@ -111,15 +111,45 @@
     },
     {
       "name": "flutter_inappwebview",
-      "rootUri": "file:///Users/jeanlucasdecamillo/.pub-cache/hosted/pub.dev/flutter_inappwebview-6.0.0-beta.28",
+      "rootUri": "file:///Users/jeanlucasdecamillo/.pub-cache/hosted/pub.dev/flutter_inappwebview-6.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.15"
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_inappwebview_android",
+      "rootUri": "file:///Users/jeanlucasdecamillo/.pub-cache/hosted/pub.dev/flutter_inappwebview_android-1.0.13",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
     },
     {
       "name": "flutter_inappwebview_internal_annotations",
       "rootUri": "file:///Users/jeanlucasdecamillo/.pub-cache/hosted/pub.dev/flutter_inappwebview_internal_annotations-1.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.15"
+    },
+    {
+      "name": "flutter_inappwebview_ios",
+      "rootUri": "file:///Users/jeanlucasdecamillo/.pub-cache/hosted/pub.dev/flutter_inappwebview_ios-1.0.13",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_inappwebview_macos",
+      "rootUri": "file:///Users/jeanlucasdecamillo/.pub-cache/hosted/pub.dev/flutter_inappwebview_macos-1.0.11",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_inappwebview_platform_interface",
+      "rootUri": "file:///Users/jeanlucasdecamillo/.pub-cache/hosted/pub.dev/flutter_inappwebview_platform_interface-1.0.10",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_inappwebview_web",
+      "rootUri": "file:///Users/jeanlucasdecamillo/.pub-cache/hosted/pub.dev/flutter_inappwebview_web-1.0.8",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
     },
     {
       "name": "flutter_lints",
@@ -231,9 +261,9 @@
     },
     {
       "name": "plugin_platform_interface",
-      "rootUri": "file:///Users/jeanlucasdecamillo/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.5",
+      "rootUri": "file:///Users/jeanlucasdecamillo/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.8",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.0"
     },
     {
       "name": "pointycastle",
@@ -326,7 +356,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-05-03T19:20:39.693120Z",
+  "generated": "2024-05-22T12:56:31.102884Z",
   "generator": "pub",
   "generatorVersion": "3.3.4"
 }

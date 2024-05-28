@@ -48,6 +48,8 @@ class PrizorSdkParams {
   /// If it is true, the app will be opened in the title route Use with AppBar, etc.
   final String titleRoute;
 
+  final String? platform;
+
   const PrizorSdkParams({
     required this.environment,
     required this.appId,
@@ -56,6 +58,7 @@ class PrizorSdkParams {
     required this.accentColor,
     required this.accentForegroundColor,
     required this.user,
+    this.platform,
     this.appLogo,
     this.appBrand,
     this.splashForegroundColor,
@@ -81,6 +84,7 @@ class PrizorSdkParams {
       'sac': sac?.toJson(),
       'isRootRoute': isRootRoute,
       'titleRoute': titleRoute,
+      'platform': platform,
     };
   }
 
@@ -99,6 +103,7 @@ class PrizorSdkParams {
       splashBackgroundColor: Color(json['splashBackgroundColor']),
       sac: Sac.fromJson(json['sac']),
       isRootRoute: json['isRootRoute'],
+      platform: json['platform'],
     );
   }
 }

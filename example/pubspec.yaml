@@ -5,13 +5,14 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.18.0 <4.0.0'
+  sdk: '>=3.5.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
   permission_handler: ^10.3.0
+  win32: ^5.1.0
   prizorsdk_flutter:
     path: ../.
 

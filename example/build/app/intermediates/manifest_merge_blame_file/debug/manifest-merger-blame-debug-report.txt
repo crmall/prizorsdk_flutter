@@ -1,0 +1,284 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.sdk_test_app"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:3:6-68
+15-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:3:23-65
+16    <uses-permission android:name="android.permission.CAMERA" />
+16-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:4:6-66
+16-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:4:23-63
+17    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+17-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:5:6-72
+17-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:5:23-69
+18    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+18-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:6:6-81
+18-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:6:23-78
+19    <uses-permission android:name="android.permission.VIDEO_CAPTURE" />
+19-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:7:6-73
+19-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:7:23-70
+20    <uses-permission android:name="android.permission.AUDIO_CAPTURE" />
+20-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:8:6-73
+20-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:8:23-70
+21
+22    <uses-feature
+22-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:15:6-85
+23        android:name="android.hardware.camera"
+23-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:15:20-58
+24        android:required="true" />
+24-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:15:59-82
+25
+26    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+26-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:9:6-80
+26-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:9:23-77
+27    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+27-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:10:6-82
+27-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:10:23-79
+28    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+28-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:11:6-81
+28-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:11:23-78
+29    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+29-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:12:6-77
+29-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:12:23-74
+30    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+30-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:13:6-80
+30-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:13:23-77
+31
+32    <uses-feature
+32-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:16:6-96
+33        android:name="android.hardware.camera.autofocus"
+33-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:16:20-68
+34        android:required="false" />
+34-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:16:69-93
+35    <uses-feature
+35-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:17:6-92
+36        android:name="android.hardware.camera2.full"
+36-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:17:20-64
+37        android:required="false" />
+37-->/Users/ivanjunior/Documents/prizorsdk_flutter/example/android/app/src/main/AndroidManifest.xml:17:65-89
+38
+39    <queries>
+39-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-11:15
+40        <intent>
+40-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:8:9-10:18
+41            <action android:name="android.support.customtabs.action.CustomTabsService" />
+41-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:13-90
+41-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:9:21-87
+42        </intent>
+43    </queries>
+44
+45    <permission
+45-->[androidx.core:core:1.13.1] /Users/ivanjunior/.gradle/caches/transforms-3/5c901f46c98377e5e4d6773a1a7d1406/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+46        android:name="com.example.sdk_test_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+46-->[androidx.core:core:1.13.1] /Users/ivanjunior/.gradle/caches/transforms-3/5c901f46c98377e5e4d6773a1a7d1406/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+47        android:protectionLevel="signature" />
+47-->[androidx.core:core:1.13.1] /Users/ivanjunior/.gradle/caches/transforms-3/5c901f46c98377e5e4d6773a1a7d1406/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+48
+49    <uses-permission android:name="com.example.sdk_test_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+49-->[androidx.core:core:1.13.1] /Users/ivanjunior/.gradle/caches/transforms-3/5c901f46c98377e5e4d6773a1a7d1406/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+49-->[androidx.core:core:1.13.1] /Users/ivanjunior/.gradle/caches/transforms-3/5c901f46c98377e5e4d6773a1a7d1406/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+50
+51    <application
+52        android:name="android.app.Application"
+53        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+53-->[androidx.core:core:1.13.1] /Users/ivanjunior/.gradle/caches/transforms-3/5c901f46c98377e5e4d6773a1a7d1406/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+54        android:debuggable="true"
+55        android:icon="@mipmap/ic_launcher"
+56        android:label="sdk_test_app" >
+57        <activity
+58            android:name="com.example.sdk_test_app.MainActivity"
+59            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+60            android:exported="true"
+61            android:hardwareAccelerated="true"
+62            android:launchMode="singleTop"
+63            android:theme="@style/LaunchTheme"
+64            android:windowSoftInputMode="adjustResize" >
+65
+66            <!--
+67                 Specifies an Android theme to apply to this Activity as soon as
+68                 the Android process has started. This theme is visible to the user
+69                 while the Flutter UI initializes. After that, this theme continues
+70                 to determine the Window background behind the Flutter UI.
+71            -->
+72            <meta-data
+73                android:name="io.flutter.embedding.android.NormalTheme"
+74                android:resource="@style/NormalTheme" />
+75
+76            <intent-filter>
+77                <action android:name="android.intent.action.MAIN" />
+78
+79                <category android:name="android.intent.category.LAUNCHER" />
+80            </intent-filter>
+81        </activity>
+82        <!--
+83             Don't delete the meta-data below.
+84             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+85        -->
+86        <meta-data
+87            android:name="flutterEmbedding"
+88            android:value="2" />
+89
+90        <provider
+91            android:name="com.pichillilorenzo.flutter_inappwebview_android.InAppWebViewFileProvider"
+92            android:authorities="com.example.sdk_test_app.flutter_inappwebview_android.fileprovider"
+93            android:exported="false"
+94            android:grantUriPermissions="true" >
+95            <meta-data
+96                android:name="android.support.FILE_PROVIDER_PATHS"
+97                android:resource="@xml/provider_paths" />
+98        </provider>
+99
+100        <activity
+100-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-18:47
+101            android:name="com.pichillilorenzo.flutter_inappwebview_android.in_app_browser.InAppBrowserActivity"
+101-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-112
+102            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density"
+102-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-137
+103            android:exported="false"
+103-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-37
+104            android:theme="@style/AppTheme" />
+104-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-44
+105        <activity
+105-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:19:9-22:55
+106            android:name="com.pichillilorenzo.flutter_inappwebview_android.chrome_custom_tabs.ChromeCustomTabsActivity"
+106-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-120
+107            android:exported="false"
+107-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+108            android:theme="@style/ThemeTransparent" />
+108-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-52
+109        <activity
+109-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:23:9-26:55
+110            android:name="com.pichillilorenzo.flutter_inappwebview_android.chrome_custom_tabs.TrustedWebActivity"
+110-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-114
+111            android:exported="false"
+111-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:25:13-37
+112            android:theme="@style/ThemeTransparent" />
+112-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-52
+113        <activity
+113-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:27:9-31:55
+114            android:name="com.pichillilorenzo.flutter_inappwebview_android.chrome_custom_tabs.ChromeCustomTabsActivitySingleInstance"
+114-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-134
+115            android:exported="false"
+115-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-37
+116            android:launchMode="singleInstance"
+116-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-48
+117            android:theme="@style/ThemeTransparent" />
+117-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:31:13-52
+118        <activity
+118-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:32:9-36:55
+119            android:name="com.pichillilorenzo.flutter_inappwebview_android.chrome_custom_tabs.TrustedWebActivitySingleInstance"
+119-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:33:13-128
+120            android:exported="false"
+120-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:34:13-37
+121            android:launchMode="singleInstance"
+121-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-48
+122            android:theme="@style/ThemeTransparent" />
+122-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-52
+123
+124        <receiver
+124-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:38:9-41:40
+125            android:name="com.pichillilorenzo.flutter_inappwebview_android.chrome_custom_tabs.ActionBroadcastReceiver"
+125-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-119
+126            android:enabled="true"
+126-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:40:13-35
+127            android:exported="false" />
+127-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:41:13-37
+128
+129        <meta-data
+129-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:43:9-45:36
+130            android:name="io.flutter.embedded_views_preview"
+130-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:44:13-61
+131            android:value="true" />
+131-->[:flutter_inappwebview_android] /Users/ivanjunior/Documents/prizorsdk_flutter/example/build/flutter_inappwebview_android/intermediates/merged_manifest/debug/AndroidManifest.xml:45:13-33
+132
+133        <uses-library
+133-->[androidx.window:window:1.2.0] /Users/ivanjunior/.gradle/caches/transforms-3/70565ee89ef0f3c26b6843d8800ad7b8/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+134            android:name="androidx.window.extensions"
+134-->[androidx.window:window:1.2.0] /Users/ivanjunior/.gradle/caches/transforms-3/70565ee89ef0f3c26b6843d8800ad7b8/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+135            android:required="false" />
+135-->[androidx.window:window:1.2.0] /Users/ivanjunior/.gradle/caches/transforms-3/70565ee89ef0f3c26b6843d8800ad7b8/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+136        <uses-library
+136-->[androidx.window:window:1.2.0] /Users/ivanjunior/.gradle/caches/transforms-3/70565ee89ef0f3c26b6843d8800ad7b8/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+137            android:name="androidx.window.sidecar"
+137-->[androidx.window:window:1.2.0] /Users/ivanjunior/.gradle/caches/transforms-3/70565ee89ef0f3c26b6843d8800ad7b8/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+138            android:required="false" />
+138-->[androidx.window:window:1.2.0] /Users/ivanjunior/.gradle/caches/transforms-3/70565ee89ef0f3c26b6843d8800ad7b8/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+139
+140        <provider
+140-->[androidx.emoji2:emoji2:1.2.0] /Users/ivanjunior/.gradle/caches/transforms-3/780a95cc02632d4421a50f21881a1e5a/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+141            android:name="androidx.startup.InitializationProvider"
+141-->[androidx.emoji2:emoji2:1.2.0] /Users/ivanjunior/.gradle/caches/transforms-3/780a95cc02632d4421a50f21881a1e5a/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+142            android:authorities="com.example.sdk_test_app.androidx-startup"
+142-->[androidx.emoji2:emoji2:1.2.0] /Users/ivanjunior/.gradle/caches/transforms-3/780a95cc02632d4421a50f21881a1e5a/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+143            android:exported="false" >
+143-->[androidx.emoji2:emoji2:1.2.0] /Users/ivanjunior/.gradle/caches/transforms-3/780a95cc02632d4421a50f21881a1e5a/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+144            <meta-data
+144-->[androidx.emoji2:emoji2:1.2.0] /Users/ivanjunior/.gradle/caches/transforms-3/780a95cc02632d4421a50f21881a1e5a/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+145                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+145-->[androidx.emoji2:emoji2:1.2.0] /Users/ivanjunior/.gradle/caches/transforms-3/780a95cc02632d4421a50f21881a1e5a/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+146                android:value="androidx.startup" />
+146-->[androidx.emoji2:emoji2:1.2.0] /Users/ivanjunior/.gradle/caches/transforms-3/780a95cc02632d4421a50f21881a1e5a/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+147            <meta-data
+147-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/ivanjunior/.gradle/caches/transforms-3/a1f3c7195050e4143955b969b83e7878/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+148                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+148-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/ivanjunior/.gradle/caches/transforms-3/a1f3c7195050e4143955b969b83e7878/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+149                android:value="androidx.startup" />
+149-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/ivanjunior/.gradle/caches/transforms-3/a1f3c7195050e4143955b969b83e7878/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+150            <meta-data
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+151                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+151-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+152                android:value="androidx.startup" />
+152-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+153        </provider>
+154
+155        <receiver
+155-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+156            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+156-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+157            android:directBootAware="false"
+157-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+158            android:enabled="true"
+158-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+159            android:exported="true"
+159-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+160            android:permission="android.permission.DUMP" >
+160-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+161            <intent-filter>
+161-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+162                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+162-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+162-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+163            </intent-filter>
+164            <intent-filter>
+164-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+165                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+165-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+165-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+166            </intent-filter>
+167            <intent-filter>
+167-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+168                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+168-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+168-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+169            </intent-filter>
+170            <intent-filter>
+170-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+171                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+171-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+171-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/ivanjunior/.gradle/caches/transforms-3/07e5fbfdec04bd66848b96a53eaec807/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+172            </intent-filter>
+173        </receiver>
+174    </application>
+175
+176</manifest>

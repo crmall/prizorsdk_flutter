@@ -1,0 +1,1 @@
+ /Users/ivanjunior/Documents/prizorsdk_flutter/example/.dart_tool/flutter_build/a21ec4792fb1b82a753dac4d850ee966/native_assets.yaml: 

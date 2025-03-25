@@ -61,7 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               child: const Text("Open PrizorSDK"),
               onPressed: () async {
-                if (cpfController.text != "" && cpfController.text.length == 11) {
+                if (cpfController.text != "" &&
+                    cpfController.text.length == 11) {
                   await Permission.location.request();
                   await Permission.camera.request();
                   await Permission.microphone.request();
@@ -71,7 +72,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       context,
                       MaterialPageRoute<void>(
                         builder: (BuildContext context) => PrizorSdkPage(
-                          cpf: cpfController.text.replaceAll(RegExp("[\\D]"), ""),
+                          cpf: cpfController.text
+                              .replaceAll(RegExp("[\\D]"), ""),
                         ),
                       ),
                     );
@@ -156,7 +158,8 @@ class _PrizorSdkPageState extends State<PrizorSdkPage> {
         ),
         sac: const Sac(
           title: "Precisa de ajuda?",
-          content: "Segunda a sábado: 10h às 22h\nDomingos e Feriados: 14h às 20h",
+          content:
+              "Segunda a sábado: 10h às 22h\nDomingos e Feriados: 14h às 20h",
           email: "sac@prizor.com",
           phone1: "+554432186300",
           phone1Caption: "(44) 3218-6300",
